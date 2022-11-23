@@ -19,7 +19,7 @@ export const ContextProvider : React.FC<Props> = (props : Props) : React.ReactEl
         searchResults,
         setSearchResults,
         duplicates,
-        setDuplicates,
+        setDuplicates
     }}>
         {props.children}
     </Context.Provider>

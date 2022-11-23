@@ -8,8 +8,7 @@ export const Searchresults = () => {
     const { searchResults, setSearchResults } = useContext(Context)
     
     return (
-        <TableContainer>
-              <Button variant={"outlined"} onClick={() => setSearchResults([])} startIcon={<CloseIcon/>} sx={{textAlign:"right"}}>Tyhjennä haku</Button>
+        <TableContainer sx={{marginTop:"10px"}}>
         <Table sx={{ border:"1px solid black", borderRadius:"10px", backgroundColor:"lightgray", boxShadow: 5}} aria-label="simple table">
           <TableHead>
             <TableRow>
@@ -26,8 +25,8 @@ export const Searchresults = () => {
                            return (
                            <TableRow>
                              <TableCell>{sisalto["0"]}</TableCell>
-                             <TableCell align="center">{tieto["0"]!}</TableCell>
-                             <TableCell align="center">{tieto["2"]!}</TableCell>
+                             <TableCell align="center">{tieto.Tuote!}</TableCell>
+                             <TableCell align="center">{tieto.Tuotenimi!}</TableCell>
                            </TableRow>
                            )
            
