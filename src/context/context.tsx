@@ -1,9 +1,14 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 
 export const Context : React.Context<any> = createContext(undefined);
 
 interface Props {
     children : React.ReactNode
+}
+
+export interface Avaus {
+  avaa : boolean;
+  ohjeNro : number;
 }
 
 export const ContextProvider : React.FC<Props> = (props : Props) : React.ReactElement<Props> => {
@@ -12,6 +17,20 @@ export const ContextProvider : React.FC<Props> = (props : Props) : React.ReactEl
     const [searchResults, setSearchResults] = useState<any>([])
     const [duplicates, setDuplicates] = useState<any>([]);
 
+    const [avaus, setAvaus] = useState<Avaus>({
+      avaa : false,
+      ohjeNro : 0
+    })
+
+    useEffect(() => {
+      setSearchResults([...searchResults])
+    }, [searchResults])
+
+    useEffect(() => {
+      setDuplicates([...duplicates])
+    }, [duplicates])
+    
+
   return (
     <Context.Provider value={{
         paketti,
@@ -19,7 +38,9 @@ export const ContextProvider : React.FC<Props> = (props : Props) : React.ReactEl
         searchResults,
         setSearchResults,
         duplicates,
-        setDuplicates
+        setDuplicates,
+        avaus,
+        setAvaus
     }}>
         {props.children}
     </Context.Provider>

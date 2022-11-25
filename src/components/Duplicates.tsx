@@ -5,7 +5,7 @@ import { Context } from '../context/context'
 
 export const Duplicates = () => {
 
-    const { duplicates, setDuplicates } = useContext(Context)
+    const { duplicates, setDuplicates, searchResults, setSearchResults } = useContext(Context)
 
     function Comparator(a : any, b : any) {
       if (a[2] < b[2]) return -1;
@@ -15,7 +15,11 @@ export const Duplicates = () => {
     
     return (
         <TableContainer>
-              <Button variant={"outlined"} onClick={() => setDuplicates([])} startIcon={<CloseIcon/>} sx={{textAlign:"right"}}>Tyhjennä haku</Button>
+              {(searchResults.length > 0)
+              ? <Button variant={"outlined"} onClick={() => setSearchResults([])} startIcon={<CloseIcon/>} sx={{textAlign:"right"}}>TYHJENNÄ HAKU</Button>
+              : <></>
+              }
+        <Button variant={"outlined"} onClick={() => {setDuplicates([]); setSearchResults([])}} startIcon={<CloseIcon/>} sx={{textAlign:"right"}}>Poista Filtteri</Button>
         <Table sx={{ border:"1px solid black", borderRadius:"10px", backgroundColor:"lightgray", boxShadow: 5}} aria-label="simple table">
           <TableHead>
             <TableRow>

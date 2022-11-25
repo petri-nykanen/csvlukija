@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import Papa from 'papaparse'
 import { useFilePicker } from 'use-file-picker';
-import { TableContainer, Table, TableHead, TableRow, TableCell, TableBody, Container, Typography, CircularProgress, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, InputLabel, Input, TextField, Button } from '@mui/material';
+import { TableContainer, Table, TableHead, TableRow, TableCell, TableBody, Container, Typography, CircularProgress, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, InputLabel, Input, TextField, Button, Dialog } from '@mui/material';
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import { Context } from './context/context';
 import { Taulukko } from './components/Taulukko';
@@ -9,6 +9,7 @@ import { Searchresults } from './components/Searchresults';
 import { Duplicates } from './components/Duplicates';
 import { Haku } from './components/Haku';
 import { Duplikaattihaku } from './components/Duplikaattihaku';
+import { Ohje } from './components/Ohje';
 
 interface Data {
   data : any[]
@@ -63,6 +64,7 @@ function App() {
       </> 
       : <Typography>Aloita lisäämällä yksi tai useampi .csv-tiedosto. Maltathan hetken! Suurella rivimäärällä lataus voi kestää.</Typography>
       }
+    <Ohje/>
     </Container>
   );
 }
