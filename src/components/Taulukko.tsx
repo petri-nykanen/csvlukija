@@ -1,5 +1,5 @@
 import { TableContainer, Table, TableHead, TableRow, TableCell, TableBody, Typography } from '@mui/material'
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { Context } from '../context/context'
 
 export const Taulukko : React.FC = () : React.ReactElement => {
@@ -13,7 +13,7 @@ export const Taulukko : React.FC = () : React.ReactElement => {
     
   return (
     <>          
-    <TableContainer>
+    <TableContainer sx={{marginTop:"10px"}}>
     <Table sx={{ border:"1px solid black", borderRadius:"10px", backgroundColor:"lightgray", boxShadow: 5}} aria-label="simple table">
       <TableHead>
         <TableRow>
@@ -30,8 +30,8 @@ export const Taulukko : React.FC = () : React.ReactElement => {
                        return (
                        <TableRow>
                          <TableCell>{sisalto.tiedostonimi}</TableCell>
-                         <TableCell align="center">{tieto["0"]}</TableCell>
-                         <TableCell align="center">{tieto["2"]}</TableCell>
+                         <TableCell align="center">{tieto.Tuote}</TableCell>
+                         <TableCell align="center">{tieto.Tuotenimi}</TableCell>
                        </TableRow>
                        )
        
