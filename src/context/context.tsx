@@ -23,10 +23,12 @@ export const ContextProvider : React.FC<Props> = (props : Props) : React.ReactEl
     })
 
     useEffect(() => {
+      if(searchResults.length > 0)
       setSearchResults([...searchResults])
     }, [searchResults])
 
     useEffect(() => {
+      if(duplicates.length > 0)
       setDuplicates([...duplicates])
     }, [duplicates])
     

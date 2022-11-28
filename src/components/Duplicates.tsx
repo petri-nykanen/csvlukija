@@ -1,4 +1,4 @@
-import { TableContainer, Table, TableHead, TableRow, TableCell, TableBody, Typography, Button } from '@mui/material'
+import { TableContainer, Table, TableHead, TableRow, TableCell, TableBody, Button } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close';
 import React, { useContext } from 'react'
 import { Context } from '../context/context'
@@ -8,9 +8,11 @@ export const Duplicates = () => {
     const { duplicates, setDuplicates, searchResults, setSearchResults } = useContext(Context)
 
     function Comparator(a : any, b : any) {
-      if (a[2] < b[2]) return -1;
-      if (a[2] > b[2]) return 1;
-      return 0;
+      let nameA = a[2]?.toUpperCase();
+      let nameB = b[2]?.toUpperCase();
+      if (nameA < nameB) return -1;
+      if (nameA > nameB) return 1;
+      else return 0;
     }
     
     return (

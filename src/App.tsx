@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import Papa from 'papaparse'
 import { useFilePicker } from 'use-file-picker';
-import { TableContainer, Table, TableHead, TableRow, TableCell, TableBody, Container, Typography, CircularProgress, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, InputLabel, Input, TextField, Button, Dialog } from '@mui/material';
-import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
+import { Container, Typography, CircularProgress,  Button,} from '@mui/material';
 import { Context } from './context/context';
 import { Taulukko } from './components/Taulukko';
 import { Searchresults } from './components/Searchresults';
@@ -39,7 +38,10 @@ function App() {
   }
 
   if (loading) {
-    return <CircularProgress/>;
+    return (
+    <Container sx={{textAlign:"center", margin:"auto", marginTop:"20%"}}>
+    <CircularProgress/>
+    </Container>)
   }
 
   return (

@@ -1,7 +1,6 @@
 import { FormControl, TextField, FormLabel, RadioGroup, FormControlLabel, Radio, Button, Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/material'
 import React, { useContext, useRef, useState } from 'react'
 import { Context } from '../context/context';
-import { Duplicates } from './Duplicates';
 
 export const Haku : React.FC = () : React.ReactElement => {
 
@@ -30,10 +29,6 @@ export const Haku : React.FC = () : React.ReactElement => {
         return (hakusana.test(nimi[`${hakuehto}`]))})])
       }))
       }
-
-      console.log("haku")
-      console.log(searchResults)
-      console.log(duplicates)
     }
     
   return (
@@ -42,7 +37,7 @@ export const Haku : React.FC = () : React.ReactElement => {
       aria-controls="panel1a-content"
       id="panel1a-header"
     >
-      <Typography>Hae hakusanalla</Typography>
+      <Typography>Hae hakusanalla tai rajaa tuloksia</Typography>
     </AccordionSummary>
     <Button onClick={() => setAvaus({avaa : true, ohjeNro : 2})}>Ohje</Button>
     <AccordionDetails>

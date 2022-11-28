@@ -1,5 +1,5 @@
 import { TableContainer, Table, TableHead, TableRow, TableCell, TableBody, Typography } from '@mui/material'
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { Context } from '../context/context'
 
 export const Taulukko : React.FC = () : React.ReactElement => {
