@@ -125,7 +125,6 @@ export const Duplikaattihaku : React.FC = () : React.ReactElement => {
         }}>Tuotenimi (rivin 3 ensimmäistä sanaa)</Button>
         : <></>
       }
-      <Button onClick={() => console.log(duplicates)}>TEST</Button>
     </AccordionDetails>
   </Accordion>
   )
