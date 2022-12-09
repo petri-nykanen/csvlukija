@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/csvlukija/static/js/main.1cecd438.js",
+    "main.js": "/csvlukija/static/js/main.e53eeefb.js",
     "index.html": "/csvlukija/index.html",
-    "main.1cecd438.js.map": "/csvlukija/static/js/main.1cecd438.js.map"
+    "main.e53eeefb.js.map": "/csvlukija/static/js/main.e53eeefb.js.map"
   },
   "entrypoints": [
-    "static/js/main.1cecd438.js"
+    "static/js/main.e53eeefb.js"
   ]
 }
