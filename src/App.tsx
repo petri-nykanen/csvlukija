@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import Papa from 'papaparse'
 import { useFilePicker } from 'use-file-picker';
 import { Container, Typography, CircularProgress,  Button,} from '@mui/material';
@@ -9,6 +9,7 @@ import { Duplicates } from './components/Duplicates';
 import { Haku } from './components/Haku';
 import { Duplikaattihaku } from './components/Duplikaattihaku';
 import { Ohje } from './components/Ohje';
+import { Footer } from './components/Footer';
 
 interface Data {
   data : any[]
@@ -64,9 +65,18 @@ function App() {
       : <Taulukko />
       }
       </> 
-      : <Typography>Aloita lisäämällä yksi tai useampi .csv-tiedosto. Maltathan hetken! Suurella rivimäärällä lataus voi kestää.</Typography>
+      : <Typography textAlign={'center'}>
+        Tämä sovellus lukee syötetyt CSV-tiedostot ja palauttaa ne näkymään taulukkomuodossa.<br></br>
+        Näkymässä voidaan etsiä taulukosta hakusanalla tai etsiä samankaltaiset rivit.<br></br>
+        Sovellusta käytetään pääasiassa lääkevalikoimien vertailuun.<br></br>
+        <br></br>
+        <b>Duplikaattirivien vertailu toteutuu sarakekohtaisesti, eli jotta tämä toimisi oikein, tulee sarakkeiden olla alkuperäisissä CSV-taulukoissa samoissa kohdissa. Eli esim. Nimi - Tuotenumero - Varasto järjestys tulee olla kaikissa syötetyissä tiedostoissa.</b>
+        <br></br>
+        <br></br>
+        Aloita lisäämällä yksi tai useampi .csv-tiedosto. Maltathan hetken! Suurella rivimäärällä lataus voi kestää.</Typography>
       }
     <Ohje/>
+    <Footer/>
     </Container>
   );
 }
